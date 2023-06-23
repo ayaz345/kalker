@@ -57,9 +57,12 @@ for func in funcs:
         except:
             defined = False
 
-        print("({0}, ({1}f64, {2}f64), ({3}, {4})),".format(
-            func[1],
-            arg[0],
-            arg[1],
-            str(round(result.real, 7)) + "f64" if defined else "f64::NAN",
-            str(round(result.imag, 7)) + "f64" if defined else "f64::NAN"))
+        print(
+            "({0}, ({1}f64, {2}f64), ({3}, {4})),".format(
+                func[1],
+                arg[0],
+                arg[1],
+                f"{str(round(result.real, 7))}f64" if defined else "f64::NAN",
+                f"{str(round(result.imag, 7))}f64" if defined else "f64::NAN",
+            )
+        )
